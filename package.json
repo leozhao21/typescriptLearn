@@ -1,0 +1,23 @@
+{
+  "name": "zale",
+  "version": "1.0.0",
+  "description": "typescript 学习",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "\t"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaleweb/typescriptLearn.git"
+  },
+  "keywords": [
+    "typescript",
+    "learn"
+  ],
+  "author": "zale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zaleweb/typescriptLearn/issues"
+  },
+  "homepage": "https://github.com/zaleweb/typescriptLearn#readme"
+}
