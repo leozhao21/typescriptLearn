@@ -1,0 +1,15 @@
+{
+  "name": "zale",
+  "description": "typescript 学习",
+  "main": "index.html",
+  "authors": [
+    "zale"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "typescript",
+    "learn"
+  ],
+  "homepage": "https://github.com/zaleweb/typescriptLearn",
+  "private": true
+}

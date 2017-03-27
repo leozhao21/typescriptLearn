@@ -2,13 +2,13 @@
   "name": "zale",
   "version": "1.0.0",
   "description": "typescript 学习",
-  "main": "gulpfile.js",
+  "main": "index.html",
   "scripts": {
     "test": "\t"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zaleweb/typescriptLearn.git"
+    "url": "https://github.com/zaleweb/typescriptLearn.git"
   },
   "keywords": [
     "typescript",
@@ -19,5 +19,20 @@
   "bugs": {
     "url": "https://github.com/zaleweb/typescriptLearn/issues"
   },
-  "homepage": "https://github.com/zaleweb/typescriptLearn#readme"
+  "homepage": "https://github.com/zaleweb/typescriptLearn#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-tsc": "^1.3.1",
+    "gulp-tslint": "^7.1.0",
+    "gulp-typescript": "^3.1.6",
+    "through-gulp": "^0.5.0",
+    "tslint": "^4.5.1",
+    "typescript": "^2.2.1"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  }
 }

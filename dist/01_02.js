@@ -1,0 +1,5 @@
+/**
+ * 范型
+ */
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy8wMV9mdW5jdGlvbi8wMV8wMi50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7R0FFRyIsImZpbGUiOiIwMV8wMi5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxyXG4gKiDojIPlnotcclxuICovIFxyXG5cclxuXHJcbiJdfQ==
