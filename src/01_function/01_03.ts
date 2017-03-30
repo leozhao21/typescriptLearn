@@ -45,4 +45,4 @@ pel.greet()
 pel.greetDelay(2000);
 pel.greetDelay1(3000);
 
-// 回调地狱
+// 回调地狱的代码，未完成
