@@ -39,6 +39,7 @@ class Person {
         })
     }
 }
+// 函数调用Person
 var pel = new Person('测试');
 pel.greet()
 pel.greetDelay(2000);
