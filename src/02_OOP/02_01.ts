@@ -90,3 +90,124 @@ function applyMixins(derivedCtor : any, baseCtors: any[]){
 }
 
 // ************ 范型类 ******************* 
+import Q  from "q";
+import $ from "jquery";
+class User {
+    public name : string;
+    public password : string;
+}
+
+class GenericRepository<T> {
+    private _url : string;
+
+    constructor(url : string){
+        this._url = url;
+    }
+
+    public getAsync(){
+        return Q.Promise((resolve : (entities : T[]) => void, reject) => {
+            $.ajax({
+                url: this._url,
+                type: "GET",
+                dataType: "json",
+                success: (data) => {
+                    var list = <T[]>data.items;
+                    resolve(list);
+                },
+                error: (e) => {
+                    reject(e);
+                }
+            });
+        });
+    }
+}
+
+var userRepository = new GenericRepository<User>('../action/user');
+userRepository.getAsync().then(
+    (users : User[]) => {
+        console.log(users);
+    }
+)
+
+// ************ 范型约束 ******************* 
+
+// 通过实现接口起到约束的效果。
+interface ValidtatbleInterface{
+    isValid() : boolean;
+}
+// 创建GenericRepository1类必须实现接口ValidtatbleInterface
+class GenericRepository1<T extends ValidtatbleInterface> {
+    private _url : string;
+
+    constructor(url : string){
+        this._url = url;
+    }
+
+    public getAsync(){
+        return Q.Promise((resolve : (entities : T[]) => void, reject) => {
+            $.ajax({
+                url: this._url,
+                type: "GET",
+                dataType: "json",
+                success: (data) => {
+                    var list : T[];
+                    var items = <T[]>data.items;
+                    for (var i = 0; i < items.length; i++) {
+                        if(items[i].isValid()){
+                            list.push(items[i])
+                        }
+                    }
+                    resolve(list);
+                },
+                error: (e) => {
+                    reject(e);
+                }
+            });
+        });
+    }
+}
+
+
+class User1 implements ValidtatbleInterface {
+    public name : string;
+    public password : string;
+
+    public isValid() : boolean {
+        return true;
+    }
+}
+
+var userRepository1 = new GenericRepository1<User1>('../action/user');
+userRepository.getAsync().then(
+    (users : User[]) => {
+        console.log(users);
+    }
+)
+
+// ************ 在范型约束中使用多重类型 ******************* 
+
+interface ValidtatbleInterface1{
+    isValid1() : boolean;
+}
+
+interface allInterface extends ValidtatbleInterface, ValidtatbleInterface{
+}
+
+
+// 通过子接口实现多个接口类型
+class GenericRepository2<T extends allInterface> {
+    private _url : string;
+
+    constructor(url : string){
+        this._url = url;
+    }
+}
+
+// ************ 范型中的new操作 *******************
+
+function factory<T>() : T {
+    var type : {new() : T;}
+    return new type();
+} 
+
+var myUser:User = factory<User>();
